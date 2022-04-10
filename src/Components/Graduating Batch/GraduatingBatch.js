@@ -1,6 +1,6 @@
 import React from 'react'
 import PageTitle from '../PageTitle/PageTitle'
-import { GraduatingChart } from './GraduatingChart'
+import GraduatingChart from './GraduatingChart'
 
 function GraduatingBatch() {
   return (
@@ -8,8 +8,9 @@ function GraduatingBatch() {
         <div className='container'>
 <PageTitle/>
 <div className='graduating-chart' >
-    <GraduatingChart/>
+<GraduatingChart/>
 </div>
+
         </div>
     </>
   )

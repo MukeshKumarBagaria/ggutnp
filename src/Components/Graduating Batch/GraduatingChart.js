@@ -1,39 +1,35 @@
-import React  from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
-ChartJS.register(ArcElement, Tooltip, Legend);
-export const data = {
-    labels: ['IT', 'CSE', 'ECE', 'MECH', 'IP', 'CIVIL'],
-    datasets: [
-      {
-        label: '# of Votes',
-        data: [82, 80, 70, 75, 72, 63],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)',
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)',
-        ],
-        borderWidth: 1,
-      },
-    ],
-  };
+import React from 'react'
+import { Chart } from "react-google-charts";
+export const data = [
+  ["Branch", "Students Per Branch"],
+  ["IT", 82],
+  ["CSE", 80],
+  ["ECE", 70],
+  ["MECH TV", 75],
+  ["IP", 60],
+  ["CIVIL", 76],
+  ["CHEM.", 75],
+  ["ELECTRICAL", 74],
 
-  export function GraduatingChart() {
-    return <Pie data={data} 
-    width={600}
-  height={600}
-  options={{ maintainAspectRatio: false }}
 
-    />;
-  }
+];
+export const options = {
+  title: "Graduating Batch 2022",
+  is3D: true,
+};
+function GraduatingChart() {
+ 
+  return (
+    <>
+   <Chart
+      chartType="PieChart"
+      data={data}
+      options={options}
+      width={"100%"}
+      height={"700px"}
+    />
+    </>
+  )
+}
+
+export default GraduatingChart

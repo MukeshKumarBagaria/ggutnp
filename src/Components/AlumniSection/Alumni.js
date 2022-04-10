@@ -16,7 +16,9 @@ function Alumni() {
                 <div className='col-lg-3'>
                   <AlumniCard/>  
                 </div>
-                <div className='col-lg-3'> <h6 className='text-center'>and many more!</h6></div>
+                <div className='col-lg-3 '>
+                <h6 className='d-flex justify-content-center'>Mand More!</h6>
+                </div>
             </div>
         </div>
     </>

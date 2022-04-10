@@ -8,6 +8,7 @@ import Placement from '../Components/PlacementRecord/Placement'
 import Testimonial from '../Components/Testimonial/Testimonial'
 import Divider from '../Components/Divider/Divider'
 import Footer from '../Components/Footer/Footer'
+import Highlights from '../Components/Timeline/Timeline'
 function HomePage() {
   return (
     <>
@@ -18,6 +19,7 @@ function HomePage() {
     <Alumni/>
     <Placement/>
     <Testimonial/>
+    <Highlights/>
     <Divider/>
     <Footer/>
     <Divider/>

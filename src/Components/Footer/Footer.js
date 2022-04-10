@@ -1,11 +1,25 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import './Footer.css'
-
+import axios from 'axios'
+import WeatherCard from '../Weather/WeatherCard';
 function Footer() {
+    const baseURL = "https://api.openweathermap.org/data/2.5/weather?lat=22.131090897896573&lon=82.13631400370537&appid=b06cfb60ad2b834918d18e62d6080934&units=metric";
+    const [post, setPost] = useState(null);
+   const [temp,setTemp]=useState('30');
+   const [description,setDescription]=useState('cloud');
+   useEffect(() => {
+        axios.get(baseURL).then((response) => {
+          setPost(response.data);
+          setTemp(post.main.temp);
+          setDescription(post.weather[0].main);
+        });
+      }, [post]);
+    
    
-
+    
   return (
     <>
+    
         <footer className="footer-section">
         <div className="container">
             <div className="footer-content pt-5 pb-5">
@@ -47,15 +61,11 @@ function Footer() {
                         </div>
                     </div>
                     <div className="col-xl-4 col-lg-4 col-md-6 mb-50">
-                        <div className="footer-widget">
-                            <div className="footer-widget-heading">
-                                <h3> Koni Bilaspur</h3>
-                            </div>
-                            <div className="footer-text mb-25">
-                                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-                            </div>
+                      
+                           
+                           <WeatherCard temp={temp} description={description}/>
         
-                        </div>
+                       
                     </div>
                 </div>
             </div>
